@@ -1,0 +1,65 @@
+/* 全体の余白とフォント */
+body {
+  background-color: #f5f5f5;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+/* 画面の最大幅を制限して中央に寄せる */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* タイトル */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* 入力欄とボタンを縦並びにしてスマホでも見やすく */
+input, button {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* 出勤ボタン */
+button:nth-of-type(1) {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* 退勤ボタン */
+button:nth-of-type(2) {
+  background-color: #f44336;
+  color: white;
+}
+
+/* 見出し */
+h2 {
+  margin-top: 30px;
+  border-left: 5px solid #333;
+  padding-left: 10px;
+}
+
+/* リスト */
+ul {
+  padding-left: 20px;
+}
+.button-row {
+  display: flex;
+  gap: 10px;
+}
+
+.button-row button {
+  flex: 1;
+}
