@@ -10,34 +10,35 @@
 </head>
 <body>
 
-  <!-- ▼ 2カラム全体を包むレイアウト -->
-  <div class="layout">
+  <div class="container">
 
-    <!-- ▼ 左側：出欠管理アプリ（今までの container） -->
-    <div class="container">
+    <h1>マーケティング部 出欠管理</h1>
 
-      <h1>マーケティング部 出欠管理</h1>
+    <input id="name" placeholder="名前を入力">
 
-      <input id="name" placeholder="名前を入力">
-
-      <div class="button-row">
-        <button class="btn-in" onclick="checkIn()">参加</button>
-        <button class="btn-out" onclick="checkOut()">帰宅</button>
-      </div>
-
-      <h2>今日の記録</h2>
-      <ul id="attendanceList"></ul>
-
-      <h2>ログ管理</h2>
-      <ul id="logList"></ul>
-
+    <div class="button-row">
+      <button class="btn-in" onclick="checkIn()">参加</button>
+      <button class="btn-out" onclick="checkOut()">帰宅</button>
     </div>
 
-    <!-- ▼ 右側：大事な予定メモ欄 -->
-    <div class="memo">
-      <h2>大事な予定</h2>
-      <textarea id="memoArea" placeholder="ここに予定を書けます"></textarea>
+    <h2>今日の記録</h2>
+    <ul id="attendanceList"></ul>
+
+    <h2>ログ管理</h2>
+    <ul id="logList"></ul>
+
+    <!-- ▼ ここから予定管理エリア（新規追加） -->
+    <h2>大事な予定</h2>
+
+    <!-- 上部：表示エリア -->
+    <div id="memoDisplay" class="memo-display">
+      まだ予定がありません
     </div>
+
+    <!-- 下部：入力欄 -->
+    <textarea id="memoInput" placeholder="ここに予定を書いてください"></textarea>
+    <button onclick="saveMemo()">予定を保存</button>
+    <!-- ▲ ここまで追加 -->
 
   </div>
 
@@ -71,6 +72,8 @@
 <script src="マーケティングコード動かす奴.js"></script>
 </body>
 </html>
+
+
 
 
 
