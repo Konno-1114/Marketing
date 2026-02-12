@@ -14,10 +14,11 @@
     <h1>マーケティング部 出欠管理</h1>
 
     <input id="name" placeholder="名前を入力">
-  <div class="button-row">
-  <button class="btn-in" onclick="checkIn()">参加</button>
-  <button class="btn-out" onclick="checkOut()">帰宅</button>
-</div>
+
+    <div class="button-row">
+      <button class="btn-in" onclick="checkIn()">参加</button>
+      <button class="btn-out" onclick="checkOut()">帰宅</button>
+    </div>
 
     <h2>今日の記録</h2>
     <ul id="attendanceList"></ul>
@@ -26,6 +27,36 @@
     <ul id="logList"></ul>
 
   </div>
+
+  <!-- ▼▼▼ Firestore を使うためのコードを追加 ▼▼▼ -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { 
+      getFirestore, collection, addDoc, getDocs, deleteDoc, doc 
+    } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+    // ★ あなたの Firebase 設定をここに貼る（コンソールで確認できる）
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT.firebaseapp.com",
+      projectId: "marketing-attendance",
+      storageBucket: "marketing-attendance.appspot.com",
+      messagingSenderId: "XXXX",
+      appId: "XXXX"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // 外部 JS から使えるようにする
+    window.db = db;
+    window.addDoc = addDoc;
+    window.getDocs = getDocs;
+    window.collection = collection;
+    window.deleteDoc = deleteDoc;
+    window.doc = doc;
+  </script>
+  <!-- ▲▲▲ Firestore 追加ここまで ▲▲▲ -->
 
   <script src="マーケティングコード動かす奴.js"></script>
 </body>
