@@ -6,6 +6,12 @@ body {
   padding: 20px;
 }
 
+/* 2カラム全体レイアウト（←追加） */
+.layout {
+  display: flex;
+  gap: 20px;
+}
+
 /* 画面の最大幅を制限して中央に寄せる */
 .container {
   max-width: 600px;
@@ -14,6 +20,26 @@ body {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* メモ欄（←追加） */
+.memo {
+  width: 250px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* メモ欄のテキストエリア（←追加） */
+.memo textarea {
+  width: 100%;
+  height: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  resize: vertical;
 }
 
 /* タイトル */
@@ -55,6 +81,7 @@ h2 {
 ul {
   padding-left: 20px;
 }
+
 .button-row {
   display: flex;
   gap: 10px;
