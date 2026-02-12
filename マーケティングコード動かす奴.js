@@ -58,7 +58,7 @@ async function render() {
     });
 }
 
-// ▼ 全ログを日付ごとに表示
+// ▼ 全ログを日付ごとに折りたたみ表示
 async function renderLogs() {
   const data = await loadData();
   const logList = document.getElementById("logList");
@@ -74,10 +74,25 @@ async function renderLogs() {
   });
 
   Object.keys(grouped).forEach(date => {
+    // ▼ 日付タイトル（クリックで開閉）
     const dateTitle = document.createElement("h3");
     dateTitle.textContent = date;
-    logList.appendChild(dateTitle);
+    dateTitle.style.cursor = "pointer";
 
+    // ▼ 折りたたみ用コンテナ
+    const container = document.createElement("div");
+    container.style.display = "none"; // 初期状態は閉じる
+
+    // ▼ タイトルクリックで開閉
+    dateTitle.addEventListener("click", () => {
+      container.style.display =
+        container.style.display === "none" ? "block" : "none";
+    });
+
+    logList.appendChild(dateTitle);
+    logList.appendChild(container);
+
+    // ▼ ログを追加
     grouped[date].forEach(entry => {
       const li = document.createElement("li");
       li.textContent = `${entry.name} - ${entry.type} - ${entry.timeDisplay}`;
@@ -89,7 +104,7 @@ async function renderLogs() {
       });
 
       li.appendChild(delBtn);
-      logList.appendChild(li);
+      container.appendChild(li);
     });
   });
 }
@@ -101,15 +116,16 @@ async function deleteLogById(id) {
   await renderLogs();
 }
 
-// ▼ ページ読み込み後に初期描画（←ここが最重要）
+// ▼ ページ読み込み後に初期描画
 window.addEventListener("DOMContentLoaded", () => {
   const lastName = localStorage.getItem("lastName");
   if (lastName) {
     document.getElementById("name").value = lastName;
   }
 
-  // ページを開いた瞬間にログを表示
   render();
   renderLogs();
 });
+
+
 
