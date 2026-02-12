@@ -66,22 +66,30 @@ ul {
   flex: 1;
 }
 
-/* ▼ ここから予定管理エリア（新規追加） */
+/* ▼ ここから予定管理エリア（横並び対応版） */
 
-/* 上部：予定の表示エリア */
+/* 横並びレイアウト */
+.memo-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-top: 10px;
+}
+
+/* 表示エリア */
 .memo-display {
+  flex: 1;
   background: #fff;
   padding: 15px;
   border-radius: 8px;
   border: 1px solid #ccc;
   min-height: 80px;
-  margin-bottom: 10px;
   white-space: pre-wrap;
 }
 
-/* 下部：予定入力欄 */
+/* 入力欄 */
 #memoInput {
-  width: 100%;
+  flex: 1;
   height: 120px;
   padding: 10px;
   font-size: 16px;
@@ -89,4 +97,15 @@ ul {
   border: 1px solid #ccc;
   resize: vertical;
 }
+
+/* 保存ボタン（横並び用に調整） */
+.memo-save-btn {
+  width: auto;
+  padding: 10px 15px;
+  height: 50px;
+  white-space: nowrap;
+  margin-top: 0;
+}
+
+
 
