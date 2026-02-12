@@ -101,7 +101,7 @@ async function deleteLogById(id) {
   await renderLogs();
 }
 
-// ▼ ページ読み込み後に初期描画（←ここが重要）
+// ▼ ページ読み込み後に初期描画（←ここが最重要）
 window.addEventListener("DOMContentLoaded", () => {
   const lastName = localStorage.getItem("lastName");
   if (lastName) {
@@ -112,3 +112,4 @@ window.addEventListener("DOMContentLoaded", () => {
   render();
   renderLogs();
 });
+
