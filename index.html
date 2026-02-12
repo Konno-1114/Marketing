@@ -27,17 +27,23 @@
     <h2>ログ管理</h2>
     <ul id="logList"></ul>
 
-    <!-- ▼ ここから予定管理エリア（新規追加） -->
+    <!-- ▼ ここから予定管理エリア（横並び版） -->
     <h2>大事な予定</h2>
 
-    <!-- 上部：表示エリア -->
-    <div id="memoDisplay" class="memo-display">
-      まだ予定がありません
-    </div>
+    <div class="memo-row">
 
-    <!-- 下部：入力欄 -->
-    <textarea id="memoInput" placeholder="ここに予定を書いてください"></textarea>
-    <button onclick="saveMemo()">予定を保存</button>
+      <!-- 表示エリア -->
+      <div id="memoDisplay" class="memo-display">
+        まだ予定がありません
+      </div>
+
+      <!-- 入力欄 -->
+      <textarea id="memoInput" placeholder="ここに予定を書いてください"></textarea>
+
+      <!-- 保存ボタン -->
+      <button onclick="saveMemo()" class="memo-save-btn">保存</button>
+
+    </div>
     <!-- ▲ ここまで追加 -->
 
   </div>
@@ -72,6 +78,8 @@
 <script src="マーケティングコード動かす奴.js"></script>
 </body>
 </html>
+
+
 
 
 
