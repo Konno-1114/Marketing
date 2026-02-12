@@ -126,6 +126,23 @@ window.addEventListener("DOMContentLoaded", () => {
   render();
   renderLogs();
 });
+// ▼ メモ保存
+function saveMemo() {
+  const text = document.getElementById("memoInput").value;
+  localStorage.setItem("memo", text);
+  document.getElementById("memoDisplay").textContent =
+    text || "まだ予定がありません";
+}
+
+// ▼ ページ読み込み時にメモを復元
+window.addEventListener("DOMContentLoaded", () => {
+  const saved = localStorage.getItem("memo");
+  document.getElementById("memoDisplay").textContent =
+    saved || "まだ予定がありません";
+});
+
+
+
 
 
 
