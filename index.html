@@ -9,22 +9,35 @@
   <title>マーケティング部 便利化計画</title>
 </head>
 <body>
-  <div class="container">
 
-    <h1>マーケティング部 出欠管理</h1>
+  <!-- ▼ 2カラム全体を包むレイアウト -->
+  <div class="layout">
 
-    <input id="name" placeholder="名前を入力">
+    <!-- ▼ 左側：出欠管理アプリ（今までの container） -->
+    <div class="container">
 
-    <div class="button-row">
-      <button class="btn-in" onclick="checkIn()">参加</button>
-      <button class="btn-out" onclick="checkOut()">帰宅</button>
+      <h1>マーケティング部 出欠管理</h1>
+
+      <input id="name" placeholder="名前を入力">
+
+      <div class="button-row">
+        <button class="btn-in" onclick="checkIn()">参加</button>
+        <button class="btn-out" onclick="checkOut()">帰宅</button>
+      </div>
+
+      <h2>今日の記録</h2>
+      <ul id="attendanceList"></ul>
+
+      <h2>ログ管理</h2>
+      <ul id="logList"></ul>
+
     </div>
 
-    <h2>今日の記録</h2>
-    <ul id="attendanceList"></ul>
-
-    <h2>ログ管理</h2>
-    <ul id="logList"></ul>
+    <!-- ▼ 右側：大事な予定メモ欄 -->
+    <div class="memo">
+      <h2>大事な予定</h2>
+      <textarea id="memoArea" placeholder="ここに予定を書けます"></textarea>
+    </div>
 
   </div>
 
@@ -55,8 +68,10 @@
   window.doc = doc;
 </script>
 
-<!-- これが絶対必要！ -->
 <script src="マーケティングコード動かす奴.js"></script>
+</body>
+</html>
+
 
 
 
