@@ -47,7 +47,6 @@
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
 
-  // 外部 JS から使えるようにする
   window.db = db;
   window.addDoc = addDoc;
   window.getDocs = getDocs;
@@ -55,6 +54,11 @@
   window.deleteDoc = deleteDoc;
   window.doc = doc;
 </script>
+
+<!-- これが絶対必要！ -->
+<script src="マーケティングコード動かす奴.js"></script>
+
+
 
 
 
