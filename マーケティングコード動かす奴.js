@@ -101,14 +101,14 @@ async function deleteLogById(id) {
   await renderLogs();
 }
 
-// ▼ 初期描画
-render();
-renderLogs();
-
-// ▼ 前回の名前を自動入力
+// ▼ ページ読み込み後に初期描画（←ここが重要）
 window.addEventListener("DOMContentLoaded", () => {
   const lastName = localStorage.getItem("lastName");
   if (lastName) {
     document.getElementById("name").value = lastName;
   }
+
+  // ページを開いた瞬間にログを表示
+  render();
+  renderLogs();
 });
